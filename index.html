@@ -20,5 +20,60 @@
     <!-- tailwindcss cdn -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body></body>
+  <body>
+    <!-- navbar section -->
+    <section>
+      <div class="bg-[#15803D]">
+        <div class="navbar bg-[#15803D] shadow-sm w-11/12 mx-auto">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-white"
+              >
+                <li><a href="">About</a></li>
+                <li>
+                  <a href="">Gallery</a>
+                </li>
+                <li><a href="">Plant & Tree</a></li>
+              </ul>
+            </div>
+            <a class="text-white text-3xl">Green Earth</a>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 text-white text-lg">
+              <li><a href="">About</a></li>
+              <li>
+                <a href="">Gallery</a>
+              </li>
+              <li><a href="">Plant & Tree</a></li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <button
+              class="bg-[#FACC15] py-2 px-4 rounded-3xl text-green-600 hover:bg-[#FACC15]"
+            >
+              Plant a Tree
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
