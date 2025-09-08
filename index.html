@@ -67,7 +67,7 @@
           </div>
           <div class="navbar-end">
             <button
-              class="bg-[#FACC15] py-2 px-4 rounded-3xl text-green-600 hover:bg-[#FACC15]"
+              class="bg-[#FACC15] py-2 px-4 rounded-3xl text-green-600 hover:bg-[#FACC15]/80"
             >
               Plant a Tree
             </button>
@@ -101,138 +101,27 @@
     <!-- choice section  -->
     <section>
       <div class="py-20 bg-[#F0FDF4]">
-        <h1 class="text-center text-xl font-bold">Choose Your Trees</h1>
+        <h1 class="text-center text-xl font-bold mb-5">Choose Your Trees</h1>
         <div class="grid grid-cols-12 gap-4 w-11/12 mx-auto">
           <div class="col-span-2">
             <h2 class="font-bold mb-4">Categories</h2>
-            <ul class="space-y-2">
-              <li class="bg-green-700 text-white px-3 py-1 rounded">
+            <ul id="categories-dom" class="space-y-2">
+              <li onclick="loadAllItems()" class="bg-green-700 text-white px-3 py-1 rounded">
                 All Trees
               </li>
-              <li>Fruit Trees</li>
-              <li>Flowering Trees</li>
-              <li>Shade Trees</li>
+              
             </ul>
           </div>
           <div class="col-span-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div class="card bg-base-100 w-auto shadow-sm">
-                <figure class="px-10 pt-10">
-                  <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                    alt="Shoes"
-                    class="rounded-xl"
-                  />
-                </figure>
-                <div class="card-body items-center text-center">
-                  <h2 class="card-title">Card Title</h2>
-                  <p>
-                    A card component has a figure, a body part, and inside body
-                    there are title and actions parts
-                  </p>
-                  <div class="card-actions">
-                    <button class="btn btn-primary">Buy Now</button>
-                  </div>
-                </div>
-              </div>
-              <div class="card bg-base-100 w-auto shadow-sm">
-                <figure class="px-10 pt-10">
-                  <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                    alt="Shoes"
-                    class="rounded-xl"
-                  />
-                </figure>
-                <div class="card-body items-center text-center">
-                  <h2 class="card-title">Card Title</h2>
-                  <p>
-                    A card component has a figure, a body part, and inside body
-                    there are title and actions parts
-                  </p>
-                  <div class="card-actions">
-                    <button class="btn btn-primary">Buy Now</button>
-                  </div>
-                </div>
-              </div>
-              <div class="card bg-base-100 w-auto shadow-sm">
-                <figure class="px-10 pt-10">
-                  <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                    alt="Shoes"
-                    class="rounded-xl"
-                  />
-                </figure>
-                <div class="card-body items-center text-center">
-                  <h2 class="card-title">Card Title</h2>
-                  <p>
-                    A card component has a figure, a body part, and inside body
-                    there are title and actions parts
-                  </p>
-                  <div class="card-actions">
-                    <button class="btn btn-primary">Buy Now</button>
-                  </div>
-                </div>
-              </div>
-              <div class="card bg-base-100 w-auto shadow-sm">
-                <figure class="px-10 pt-10">
-                  <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                    alt="Shoes"
-                    class="rounded-xl"
-                  />
-                </figure>
-                <div class="card-body items-center text-center">
-                  <h2 class="card-title">Card Title</h2>
-                  <p>
-                    A card component has a figure, a body part, and inside body
-                    there are title and actions parts
-                  </p>
-                  <div class="card-actions">
-                    <button class="btn btn-primary">Buy Now</button>
-                  </div>
-                </div>
-              </div>
-              <div class="card bg-base-100 w-auto shadow-sm">
-                <figure class="px-10 pt-10">
-                  <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                    alt="Shoes"
-                    class="rounded-xl"
-                  />
-                </figure>
-                <div class="card-body items-center text-center">
-                  <h2 class="card-title">Card Title</h2>
-                  <p>
-                    A card component has a figure, a body part, and inside body
-                    there are title and actions parts
-                  </p>
-                  <div class="card-actions">
-                    <button class="btn btn-primary">Buy Now</button>
-                  </div>
-                </div>
-              </div>
-              <div class="card bg-base-100 w-auto shadow-sm">
-                <figure class="px-10 pt-10">
-                  <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                    alt="Shoes"
-                    class="rounded-xl"
-                  />
-                </figure>
-                <div class="card-body items-center text-center">
-                  <h2 class="card-title">Card Title</h2>
-                  <p>
-                    A card component has a figure, a body part, and inside body
-                    there are title and actions parts
-                  </p>
-                  <div class="card-actions">
-                    <button class="btn btn-primary">Buy Now</button>
-                  </div>
-                </div>
-              </div>
+            <div id="plants-dom" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              
+              
+              
+             
+              
             </div>
           </div>
-          <div class="col-span-2">
+          <div class="col-span-2 bg-white rounded-3xl px-4 pt-4">
             <h2 class="font-bold mb-4">Your Cart</h2>
             <ul class="space-y-2">
               <li class="flex justify-between">
@@ -258,20 +147,20 @@
       <div class="py-20 bg-[#F0FDF4]">
         <h1 class="text-center text-xl font-bold">About the Campaign</h1>
         <div
-          class="flex justify-center items-center w-max-[1090px] mx-auto my-8"
+          class="flex flex-col md:flex-row justify-center items-center max-w-[1090px] mx-auto my-8"
         >
           <img src="assets/about.png" alt="" />
-          <div class="">
-            <p>
+          <div class=" ml-8 space-y-3">
+            <p class="text-[#1F2937]">
               Green Earth is a global tree plantation initiative dedicated to
               fighting climate change. Since our start, we’ve planted over
               500,000 trees worldwide. By joining our campaign, you help restore
               forests, create habitats for wildlife, and combat global warming.
             </p>
-            <ul>
-              <li>Restoration of natural habitats</li>
-              <li>Improvement of air quality</li>
-              <li>Support for local communities</li>
+            <ul class="ml-3">
+              <li class="list-disc">Restoration of natural habitats</li>
+              <li class="list-disc">Improvement of air quality</li>
+              <li class="list-disc">Support for local communities</li>
             </ul>
           </div>
         </div>
@@ -283,7 +172,7 @@
       <div class="bg-[#CFF0DC] py-16">
         <h1 class="text-2xl font-bold text-center mb-4">Our Impact</h1>
         <div
-          class="w-11/12 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          class="w-11/12 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center"
         >
           <div class="card bg-base-100 w-96 shadow-sm">
             <div class="card-body">
@@ -315,17 +204,22 @@
 
     <section>
       <div class="bg-[#166534] py-16">
-        <h1 class="text-center text-white text-xl font-bold">
+        <h1 class="text-center text-white text-2xl font-bold mb-9">
           Plant a Tree Today
         </h1>
         <div class="flex justify-center items-center">
-          <div class="card bg-[#15803D] text-primary-content w-96">
-            <div class="card-body">
-              <input type="text" placeholder="Medium" class="input input-md" />
-              <input type="text" placeholder="Medium" class="input input-md" />
-              <input type="text" placeholder="Medium" class="input input-md" />
+          <div class="card card-xl bg-[#15803D] text-primary-content  w-[550px] ">
+            <div class="card-body ">
+              <input type="text" placeholder="Your Name" class="input input-xl w-[470px] text-[#1F2937]" />
+              <input type="text" placeholder="Your Email Address" class="input input-xl w-[470px] text-[#1F2937]" />
+              <select class="input w-[470px]  rounded bg-white text-black">
+                <option value="">Choose a tree</option>
+                <option value="mango">Mango Tree</option>
+                <option value="guava">Guava Tree</option>
+                <option value="bamboo">Bamboo Tree</option>
+              </select>
               <button
-                class="bg-[#FACC15] py-2 px-4 rounded-3xl text-green-600 hover:bg-[#FACC15]"
+                class="bg-[#FACC15] py-2 px-4 rounded-3xl text-green-600 hover:bg-[#FACC15]/90"
               >
                 Plant a Tree
               </button>
@@ -341,5 +235,7 @@
         © 2025 Green Earth. All Rights Reserved.
       </p>
     </section>
+
+    <script src="plant.js"></script>
   </body>
 </html>
