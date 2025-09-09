@@ -10,18 +10,23 @@ const loadCategories  = async() => {
 
 // adding the categories in UI
 const displayCategories = (categories) => {
-    const categoriesContainer = document.getElementById("categories-dom");
-    //categoriesContainer.innerHTML =""
-    for (const category of categories) {
-        const categoriesList = document.createElement("li");
-        categoriesList.innerHTML =`
-        <li id ="cat-id-${category.id}" onclick= "loadItems(${category.id})" class="active cat-act hover:bg-gray-700 px-3 py-1 rounded">
-                ${category.category_name}
-              </li>
-        `;
-        categoriesContainer.append(categoriesList);
-    }
-}
+  const container = document.getElementById("categories-dom");
+  
+
+  categories.forEach((category) => {
+    const li = document.createElement("li");
+    li.id = `cat-id-${category.id}`;
+    li.className = "cat-act px-3 py-1 rounded cursor-pointer";
+    li.textContent = category.category_name;
+
+    li.addEventListener("click", () => {
+      setActive(li);
+      loadItems(category.id);
+    });
+
+    container.appendChild(li);
+  });
+};
 
 loadCategories();
 
@@ -29,7 +34,7 @@ loadCategories();
 
  const loadItems = async (id)=> {
   manageSpinner(true);
-  removeActive();
+   
     const url = `https://openapi.programming-hero.com/api/category/${id}`;
     const res = await fetch(url);
     const data = await res.json();
@@ -40,10 +45,11 @@ loadCategories();
 
 // load all items
  const loadAllItems = async ()=> {
+   manageSpinner(true);
     const url = "https://openapi.programming-hero.com/api/plants";
     const res = await fetch(url);
     const data = await res.json();
-    
+    manageSpinner(false);
     displayCategorieItems(data.plants);
  }
 
@@ -99,6 +105,7 @@ const displayCategorieItems = (plants) => {
         //console.log(plant)
     });
    manageSpinner(false);
+   
 }
 
 
@@ -187,10 +194,11 @@ function cancelCart(price, id){
   document.getElementById("total-amount").innerText= totalAmomunt;
 }
 //remove activation function
-const removeActive = () => {
-  const activeCat = document.querySelectorAll(".cat-act");
-  activeCat.forEach((cat) => cat.classList.remove(".active"));
-};
-
+function setActive(el) {
+  document.querySelectorAll(".cat-act").forEach((li) =>
+    li.classList.remove("active", "bg-green-700", "text-white")
+  );
+  el.classList.add("active", "bg-green-700", "text-white");
+}
 
 
