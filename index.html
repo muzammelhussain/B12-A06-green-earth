@@ -47,7 +47,7 @@
               </div>
               <ul
                 tabindex="0"
-                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-white"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-green-700"
               >
                 <li><a href="">About</a></li>
                 <li>
@@ -80,7 +80,7 @@
 
     <!-- banner section  -->
     <section>
-      <div class="md:flex justify-around items-center bg-[#CFF0DC]">
+      <div class="flex flex-col md:flex-row justify-around items-center bg-[#CFF0DC]">
         <div><img src="assets/hero-leaf1.png" alt="" /></div>
         <div class="space-y-4 flex flex-col items-center">
           <h1 class="text-[#1F2937] text-4xl text-center font-bold">
@@ -116,7 +116,7 @@
           <div class="col-span-2">
             <h2 class="font-bold mb-4">Categories</h2>
             <ul id="categories-dom" class="flex flex-wrap gap-3 lg:flex-col space-y-2">
-              <li  onclick="setActive(this); loadAllItems();" class="active cat-act px-3 py-1 rounded">
+              <li  onclick="setActive(this); loadAllItems();" class="active cat-act px-3 py-1 rounded cursor-pointer hover:bg-green-700 hover:text-white">
                 All Trees
               </li>
               
@@ -217,7 +217,7 @@
     <!-- input section  -->
 
     <section>
-      <div class="bg-[#166534] py-16">
+      <div class="bg-[#166534] py-12 px-4 md:py-16 md:px-8">
         <h1 class="text-center text-white text-2xl font-bold mb-9">
           Plant a Tree Today
         </h1>
@@ -227,15 +227,15 @@
               <input type="text" placeholder="Your Name" class="input input-xl w-[470px] text-[#1F2937]" />
               <input type="text" placeholder="Your Email Address" class="input input-xl w-[470px] text-[#1F2937]" />
               <select class="input w-[470px]  rounded bg-white text-black">
-                <option value="">Choose a tree</option>
-                <option value="mango">Mango Tree</option>
-                <option value="guava">Guava Tree</option>
-                <option value="bamboo">Bamboo Tree</option>
+                <option value="">Number of trees</option>
+                <option value="mango">One</option>
+                <option value="guava">Two</option>
+                <option value="bamboo">Three</option>
               </select>
               <button
                 class="bg-[#FACC15] py-2 px-4 rounded-3xl text-green-600 hover:bg-[#FACC15]/90"
               >
-                Plant a Tree
+                Donate Now
               </button>
             </div>
           </div>

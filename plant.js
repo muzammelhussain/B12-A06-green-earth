@@ -16,7 +16,7 @@ const displayCategories = (categories) => {
   categories.forEach((category) => {
     const li = document.createElement("li");
     li.id = `cat-id-${category.id}`;
-    li.className = "cat-act px-3 py-1 rounded cursor-pointer";
+    li.className = "cat-act px-3 py-1 rounded cursor-pointer hover:bg-green-700 hover:text-white";
     li.textContent = category.category_name;
 
     li.addEventListener("click", () => {
@@ -73,7 +73,7 @@ const displayCategorieItems = (plants) => {
     plants.forEach(plant => {
         const  plantDiv = document.createElement("div");
         plantDiv.innerHTML = `
-          <div class="card bg-base-100 w-auto shadow-sm" id="${plant.id}" >
+          <div class="card bg-base-100 w-auto pb-4 shadow-sm" id="${plant.id}" >
               <div onClick ="plantDetails(${plant.id})">
                 <div class="px-3 pt-5">
                   <img
@@ -96,7 +96,7 @@ const displayCategorieItems = (plants) => {
                 </div>
               </div>  
                 <div class="card-actions">
-                    <button class="btn  w-full bg-[#15803D] text-white rounded-full"   onClick="addToCart('${plant.name}', ${plant.price})">Add to Cart</button>
+                    <button class="btn mx-auto w-11/12 bg-[#15803D] text-white rounded-full"   onClick="addToCart('${plant.name}', ${plant.price})">Add to Cart</button>
                   </div>
               </div>
         `;
