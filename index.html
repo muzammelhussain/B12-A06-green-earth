@@ -103,12 +103,14 @@
      
     <!-- choice section  -->
     <section>
-      <div class="py-20 bg-[#F0FDF4]">
+      <div class="py-20 bg-[#F0FDF4] ">
+
+        <div class="flex justify-center items-center">
          <span
             id="spinner"
-            class="loading loading-ring loading-xl hidden"
+            class="loading loading-ring loading-xl hidden "
           ></span>
-
+        </div>
         <h1 class="text-center text-xl font-bold mb-5">Choose Your Trees</h1>
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 w-11/12 mx-auto">
           <div class="col-span-2">
@@ -124,21 +126,16 @@
             <div id="plants-dom" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             </div>
           </div>
-          <div class="col-span-2 bg-white rounded-3xl px-4 py-4 w-full">
+          <div class="col-span-2 bg-white rounded-3xl px-4 py-4 w-full ">
             <h2 class="font-bold mb-4">Your Cart</h2>
 
-            <div id="cart-section">
-                <div class="flex justify-between items-center bg-[#DCFCE7] py-3 px-2 rounded-2xl">
-              <div class="pl-1">
-                <h1 class="font-bold">mango tree</h1>
-                <p><span>৳500 × 1</span></p>
-              </div>
-              <div>
-                <button><i class="fa-solid fa-xmark"></i></button>
-              </div>
+            <div id="cart-section" class="space-y-3">
+               
             </div>
-            </div>
-            
+          <div class="flex justify-between items-center mt-4">
+              <h1 class="font-bold">Total</h1>
+              <p>৳ <span id="total-amount"></span></p>
+          </div>
           </div>
           </div>
         

@@ -67,8 +67,8 @@ const displayCategorieItems = (plants) => {
     plants.forEach(plant => {
         const  plantDiv = document.createElement("div");
         plantDiv.innerHTML = `
-          <div class="card bg-base-100 w-auto shadow-sm" id="${plant.id}" onClick ="plantDetails(${plant.id})">
-           
+          <div class="card bg-base-100 w-auto shadow-sm" id="${plant.id}" >
+              <div onClick ="plantDetails(${plant.id})">
                 <div class="px-3 pt-5">
                   <img
                     src= ${plant.image}
@@ -85,10 +85,13 @@ const displayCategorieItems = (plants) => {
                     <h1 class="py-1 px-4 rounded-full bg-[#CFF0DC] text-[#15803D]">${plant.category}</h1>
                     <p class="font-bold"> ৳${plant.price}</p>
                   </div>
-                  <div class="card-actions">
+                  
+                  
+                </div>
+              </div>  
+                <div class="card-actions">
                     <button class="btn  w-full bg-[#15803D] text-white rounded-full"   onClick="addToCart('${plant.name}', ${plant.price})">Add to Cart</button>
                   </div>
-                </div>
               </div>
         `;
         plantsContainer.append(plantDiv);
@@ -150,26 +153,39 @@ const manageSpinner = (status, time = 2000) => {
 
 
 //add to cart
-
 const addToCart=(name, price)=>{
+ total(price);
 const cartDiv = document.getElementById("cart-section");
-const cartItem = document.createElement(`
-                <div class="flex justify-between items-center bg-[#DCFCE7] py-3 px-2 rounded-2xl">
+const cartItem = document.createElement("div");
+  const id = Date.now();
+  cartItem.innerHTML = `
+                <div id="cart-item-${id}" class="flex justify-between items-center bg-[#DCFCE7] py-3 px-2 rounded-2xl">
               <div class="pl-1">
-                <h1 class="font-bold">'${name}'</h1>
+                <h1 class="font-bold">${name}</h1>
                 <p><span>৳${price} × 1</span></p>
               </div>
               <div>
-                <button><i class="fa-solid fa-xmark"></i></button>
+                <button onClick= "cancelCart(${price}, 'cart-item-${id}')"><i class="fa-solid fa-xmark"></i></button>
               </div>
             </div>
   `
-);
+
 
 cartDiv.append(cartItem);
- console.log(name,price)
 }
 
+// caculating the cart amount
+let totalAmomunt = 0 ;
+function total(price){
+  totalAmomunt += price;
+  document.getElementById("total-amount").innerText= totalAmomunt;
+}
+
+function cancelCart(price, id){
+   totalAmomunt -= price;
+  document.getElementById(id).remove();
+  document.getElementById("total-amount").innerText= totalAmomunt;
+}
 //remove activation function
 const removeActive = () => {
   const activeCat = document.querySelectorAll(".cat-act");
